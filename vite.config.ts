@@ -7,7 +7,7 @@ export default defineConfig({
     open: true,
   },
   build: {
-    target: 'ES2020',
+    target: 'ES2022',
     outDir: 'dist',
     sourcemap: true,
   },
