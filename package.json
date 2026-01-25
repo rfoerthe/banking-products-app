@@ -14,10 +14,8 @@
     "serve:storybook": "npx serve storybook-static",
     "clean": "rimraf dist storybook-static node_modules"
   },
-  "dependencies": {
-    "lit": "^3.3.2"
-  },
   "devDependencies": {
+    "lit": "^3.3.2",
     "@lit/reactive-element": "^2.1.2",
     "@storybook/addon-links": "^10.2.0",
     "@storybook/addon-vitest": "^10.2.0",

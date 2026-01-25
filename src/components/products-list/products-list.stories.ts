@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/web-components';
+import { linkTo } from '@storybook/addon-links';
 import { html } from 'lit';
 import type { BankingProduct } from '../../types/banking.types';
 import './products-list.component';
@@ -76,6 +77,33 @@ export const Default: Story = {
   args: {
     products: mockProducts,
   },
+  render: (args: ProductsListStoryArgs) => html`Uses 
+    <button
+      type="button"
+      @click=${() => {
+        linkTo('Components/ProductItem', 'Active')();
+      }}
+    >
+      product-item
+    </button>
+    <button
+      type="button"
+      @click=${() => {
+        linkTo('Components/Accordion', 'Single Open')();
+      }}
+    >
+      app-accordion
+    </button>
+    <button
+      type="button"
+      @click=${() => {
+        linkTo('Components/AccordionItem', 'Open')();
+      }}
+    >
+      accordion-item
+    </button>
+    <products-list .products=${args.products ?? []} ?loading=${args.loading ?? false} .error=${args.error ?? ''}></products-list>
+  `,
 };
 
 export const Empty: Story = {
